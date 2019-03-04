@@ -1,0 +1,18 @@
+---
+version: '3'
+
+services:
+
+  server:
+    build: .
+    image: index.docker.io/oaklabs/component-oak-lights:${VERSION-latest}
+    network_mode: host
+    privileged: true
+    environment:
+      - PORT=9100
+    volumes:
+      - /dev:/dev
+      - /dev/ttyACM0:/dev/oak/oak-lights/0
+      # - ./src:/src/
+    devices:
+      - /dev
