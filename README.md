@@ -2,13 +2,8 @@
 
 Requirements for use:
 * `PORT` env var set to port that gRPC server should listen on
-* `/dev/ttyACM*` devices mounted
-* `/dev/oak/oak-lights/` bind-mounted
-* This udev rule on the host:
+* `/dev/ttyACM*` devices that correspond to Oak Lights controllers mounted
 
-```
-SUBSYSTEM=="tty", ATTRS{idProduct}=="8d21", ATTRS{idVendor}=="1b4f", ATTRS{manufacturer}=="OAK", ATTRS{product}=="LIGHT", SYMLINK+="oak/oak-lights/$env{ID_SERIAL}"
-```
 
 ## Dev Notes
 
