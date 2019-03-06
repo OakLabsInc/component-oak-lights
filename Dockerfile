@@ -9,7 +9,8 @@ FROM python:3.7.0-alpine
 
 WORKDIR /src/
 
-RUN apk --no-cache add python-dev build-base
+RUN apk --no-cache add build-base=0.5-r1 python-dev=2.7.15-r1
+
 COPY src/requirements.txt ./
 RUN pip install -r requirements.txt
 
