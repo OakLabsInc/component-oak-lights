@@ -42,7 +42,7 @@ def make_server(address):
         print('WARNING! No Oak Lights controllers found.'
               ' This server must be restarted after any are connected.')
     else:
-        print('Found Oak Lights controllers: %s', controllers)
+        print('Found Oak Lights controllers:', controllers)
 
     server = grpc.server(concurrent.futures.ThreadPoolExecutor(max_workers=10))
     oak_lights_pb2_grpc.add_OakLightsServicer_to_server(
