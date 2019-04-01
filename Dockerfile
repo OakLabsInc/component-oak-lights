@@ -4,7 +4,6 @@ COPY *.proto /protos/
 
 RUN python -m grpc_tools.protoc --proto_path=/protos/ --python_out=/protos/ --grpc_python_out=/protos/ /protos/*.proto
 
-
 FROM python:3.7.0-alpine
 
 WORKDIR /src/
@@ -23,3 +22,5 @@ ENV PYTHONUNBUFFERED=yes \
     PYTHONPATH=/protos/
 
 CMD python server.py
+
+ENV PORT=9100
